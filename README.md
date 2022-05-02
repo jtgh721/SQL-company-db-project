@@ -1,5 +1,3 @@
-# SQL-company-db-project
- RDBMS-project-sql
 # Company Database Project
 
 The purpose of this project is to 
@@ -7,7 +5,7 @@ The purpose of this project is to
 2. create reports based on the data in company database
 
 ### 1.1 Install Company Database Schemas
-To install company database schemas, run the following **2 files** in SQL terminal.
+To install company database schemas, run the following **2 files**
 
 ```
 1. create_company_db_tables.sql
@@ -15,30 +13,31 @@ To install company database schemas, run the following **2 files** in SQL termin
 ```
 
 ### 1.2 Company Schema Diagram
-In company database, we have 5 tables
+In company database, we have **5 tables**
 
-**employee** (*ID*, FIRST_NAME, LAST_NAME, BIRTH_DATE, SEX, SALARY, **SUPERVISOR_ID, **BRANCH_ID)
+**employee** (*emp_id, first_name, last_name, birth_day, sex, salary, **super_id, **branch_id)
 - employee table stores all employee data including employee id, first name, last name, birth date, sex, salary, supervior employee id and branch id.
 
-**branch** (*ID, NAME, **MANAGER_ID, MANAGER_START_DATE)
+**branch** (*branch_id, branch_name, **mgr_id, mgr_start_date)
 - branch table stores all the information related to a branch including branch id, branch name, branch manager employee id, branch manager start date.
 
-**client** (*ID, NAME, **BRANCH_ID)
+**client** (*client_id, client_name, **branch_id)
 - client table stores all the information related to a client including client id, client name, branch id that each client belongs to.
 
 **branch_supplier** (*branch_id, *supplier_name, supply_type)
 - branch_supplier table stores all the supplier information including supplier name and supply type that a branch works with.
 
-**works_with** (*EMPLOYEE_ID, *CLIENT_ID, TOTAL_SALES)
+**works_with** (*emp_id, *client_id, total_sales)
 - works_with table store the total sales for each employee based on the client that he/she works with.
-
 
 *(Primary key) 
 ** (Foreign key)
 
-For more details, please see [company schema diagram]()
+For more details, please see [company schema diagram](https://github.com/jtgh721/SQL-company-db-project/blob/main/company-database.png)
 
 ### 2. reports based on the data in Company Database
+To generate reportsfrom database, run the following **3 files**
+
 ```
 1. create_report_for_employee_data.sql
 2. create_report_for_total_sales_employee_with_client.sql
@@ -46,9 +45,9 @@ For more details, please see [company schema diagram]()
 ```
 
 ### 2.1 Create employee data report
-To create an employee data report, run **create_report_for_employee_data.sql** file in mySQL.
+To create an employee data report, run **create_report_for_employee_data.sql** 
 
-```
+```sql
 -- employee data report
 select emp.emp_id as "EMPLOYEE_ID",
 emp.first_name, emp.last_name, emp.birth_day, emp.sex, 
@@ -62,9 +61,9 @@ This [report]() will show all the related data of each employee with employee id
 
 
 ### 2.2 Create total sales of each employee has with client details report 
-To create a yearly report to show total sales, run **create_report_for_total_sales_employee_with_client.sql** file in mySQL.
+To create a yearly report to show total sales, run **create_report_for_total_sales_employee_with_client.sql** 
 
-```
+```sql
 -- Sales of each employee has with each clients 
 select emp.emp_id as "EMPLOYEE_ID", emp.first_name, emp.last_name,
 branch.branch_name as "BRANCH_NAME",
@@ -83,9 +82,9 @@ This [report]() will show employee id, employee first name, employee last name, 
 
 
 ### 2.3 Create a report for the sum of total sales of each employee
-To create a yearly report to show sum of total sales for each employee, run **create_report_for_employee_total_sales.sql** file in mySQL.
+To create a yearly report to show sum of total sales for each employee, run **create_report_for_employee_total_sales.sql**
 
-```
+```sql
 -- sum of total sales for each employee
 select emp.emp_id as "EMPLOYEE_ID",
 emp.first_name, emp.last_name,
