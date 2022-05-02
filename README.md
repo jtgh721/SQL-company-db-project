@@ -95,7 +95,6 @@ from employee as emp
 left join branch on (emp.branch_id = branch.branch_id)
 left join employee as manager on (emp.super_id = manager.emp_id)
 left join(  select emp_id, sum(total_sales) as total_sales
-            from works_with group by emp_id ) as emp_total_sales 
-on (emp.emp_id = emp_total_sales.emp_id);
+            from works_with group by emp_id ) as emp_total_sales  on (emp.emp_id = emp_total_sales.emp_id);
 ```
 This [report]() will show employee id, employee first name, employee last name, a branch that an employee belongs, manager name of each employee, sum of total sales for each employee has.
