@@ -1,0 +1,15 @@
+"EMPLOYEE_ID","first_name","last_name","BRANCH_NAME","MANAGER_NAME","client_name","total_sales"
+100,"David","Wallace","Corporate","","",""
+101,"Jan","Levinson","Corporate","David Wallace","",""
+102,"Michael","Scott","Scranton","David Wallace","Lackawana Country",267000
+102,"Michael","Scott","Scranton","David Wallace","FedEx",15000
+103,"Angela","Martin","Scranton","Michael Scott","",""
+104,"Kelly","Kapoor","Scranton","Michael Scott","",""
+105,"Stanley","Hudson","Scranton","Michael Scott","Dunmore Highschool",55000
+105,"Stanley","Hudson","Scranton","Michael Scott","Scranton Whitepages",33000
+105,"Stanley","Hudson","Scranton","Michael Scott","FedEx",130000
+106,"Josh","Porter","Stamford","David Wallace","",""
+107,"Andy","Bernard","Stamford","Josh Porter","John Daly Law, LLC",5000
+107,"Andy","Bernard","Stamford","Josh Porter","Times Newspaper",26000
+108,"Jim","Halpert","Stamford","Josh Porter","FedEx",22500
+108,"Jim","Halpert","Stamford","Josh Porter","John Daly Law, LLC",12000
