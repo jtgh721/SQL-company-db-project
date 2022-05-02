@@ -57,7 +57,7 @@ from employee as emp
 left join branch on (emp.branch_id = branch.branch_id)
 left join employee as manager on (emp.super_id = manager.emp_id);
 ```
-This [report]() will show all the related data of each employee with employee id, employee first name, employee last name, birth date, sex, branch that an employee belongs, manager name of each employee.
+This [report](https://github.com/jtgh721/SQL-company-db-project/blob/main/create_report_for_employee_data.csv) will show all the related data of each employee with employee id, employee first name, employee last name, birth date, sex, branch that an employee belongs, manager name of each employee.
 
 
 ### 2.2 Create total sales of each employee has with client details report 
@@ -78,7 +78,7 @@ left join ( select works_with.emp_id, client.client_name as client_name, works_w
             as emp_total_sales  on (emp_total_sales.emp_id = emp.emp_id)
 order by emp.emp_id;
 ```
-This [report]() will show employee id, employee first name, employee last name, branch that employee belongs, manager name of each employee, client names, total sales of each employee.
+This [report](create_report_for_total_sales_employee_with_client.csv) will show employee id, employee first name, employee last name, branch that employee belongs, manager name of each employee, client names, total sales of each employee.
 
 
 ### 2.3 Create a report for the sum of total sales of each employee
@@ -97,4 +97,4 @@ left join employee as manager on (emp.super_id = manager.emp_id)
 left join(  select emp_id, sum(total_sales) as total_sales
             from works_with group by emp_id ) as emp_total_sales  on (emp.emp_id = emp_total_sales.emp_id);
 ```
-This [report]() will show employee id, employee first name, employee last name, a branch that an employee belongs, manager name of each employee, sum of total sales for each employee has.
+This [report](create_report_for_employee_total_sales.csv) will show employee id, employee first name, employee last name, a branch that an employee belongs, manager name of each employee, sum of total sales for each employee has.
